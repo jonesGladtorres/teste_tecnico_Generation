@@ -6,7 +6,7 @@ class Student(models.Model):
         ordering = ["id"]
 
     name = models.CharField(max_length=60)
-    age = models.IntegerField()
+    age = models.DecimalField(max_digits=2)
     first_semester_grade = models.FloatField()
     second_semester_grade = models.FloatField()
     teacher_name = models.CharField(max_length=60)
