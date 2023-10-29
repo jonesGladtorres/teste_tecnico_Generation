@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -51,7 +51,6 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     'drf_spectacular',
     'rest_framework',
-    'django.contrib.staticfiles',
 ]
 
 MY_APPS = [
@@ -115,7 +114,7 @@ if DATABASES_URL:
     DATABASES["default"].update(db_from_env)
 
 if not DEBUG:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    STATIC_ROOT = os.path.join(BASE_DIR, "static")
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
