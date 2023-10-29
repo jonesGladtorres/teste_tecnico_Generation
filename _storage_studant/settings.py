@@ -51,6 +51,7 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     'drf_spectacular',
     'rest_framework',
+    'django.contrib.staticfiles',
 ]
 
 MY_APPS = [
